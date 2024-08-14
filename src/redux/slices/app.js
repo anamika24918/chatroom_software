@@ -32,7 +32,7 @@ export function ToogleSidebar() {
     }
 }
 
-export function updateSidebarType(type) {
+export function UpdateSidebarType(type) {
     return async () => {
         dispatch(slice.actions.updateSidebarType({
             type,
