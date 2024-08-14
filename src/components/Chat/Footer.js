@@ -102,7 +102,7 @@ const ChatInput = ({ openPicker, setOpenPicker }) => {
               ))}
             </Stack>
 
-            <InputAdornment>
+            <InputAdornment >
               <IconButton
                 onClick={() => {
                   setOpenActions(!openActions);

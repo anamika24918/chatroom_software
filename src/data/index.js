@@ -9,6 +9,7 @@ import {
   Users,
 } from "phosphor-react";
 
+
 const Profile_Menu = [
   {
     title: "Profile",
@@ -19,7 +20,7 @@ const Profile_Menu = [
     icon: <Gear />,
   },
   {
-    title: "Profile",
+    title: "Logout",
     icon: <SignOut />,
   },
 ];

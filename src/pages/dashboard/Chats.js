@@ -41,12 +41,6 @@ import ChatElement from '../../components/ChatElement';
 //   },
 // }));
 
-// SmallAvatar Component
-// const SmallAvatar = styled(Avatar)(({ theme }) => ({
-//   width: 22,
-//   height: 22,
-//   border: `2px solid ${theme.palette.background.paper}`,
-// }));
 
 // // ChatElement Component
 // const ChatElement = ({ id, name, img, msg, time, unread, online }) => {
@@ -215,3 +209,7 @@ const Chats = () => {
 };
 
 export default Chats;
+
+
+
+
