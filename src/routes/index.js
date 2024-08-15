@@ -7,6 +7,7 @@ import DashboardLayout from "../layouts/dashboard";
 // config
 import { DEFAULT_PATH } from "../config";
 import LoadingScreen from "../components/LoadingScreen";
+import MainLayout from "../layouts/main";
 
 
 // it basically a higher order component which is going to accept components and it wrap the component inside suspense and suspense is accepting loading screen which basically a component which is going to display loading screen 
@@ -20,6 +21,14 @@ const Loadable = (Component) => (props) => {
 
 export default function Router() {
   return useRoutes([
+  {
+    path: "/auth",
+    element: <MainLayout/>,
+    children: [
+      {element : <LoginPage/>, path:"login"}
+      ]
+  },
+
     {
       path: "/",
       element: <DashboardLayout />,
@@ -44,6 +53,9 @@ export default function Router() {
 const GeneralApp = Loadable(
   lazy(() => import("../pages/dashboard/GeneralApp")),
 );
+const LoginPage = Loadable(
+  lazy(() => import("../pages/auth/Login")),
+  );
 const Settings = Loadable(
   lazy(() => import("../pages/dashboard/Settings")),
 );
