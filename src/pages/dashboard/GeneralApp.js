@@ -5,6 +5,8 @@ import Conversation from "../../components/Conversation";
 import { useTheme } from "@emotion/react";
 import Contact from "../../components/Contact";
 import { useSelector } from "react-redux";
+import SharedMessages from "../../components/SharedMessages";
+import StarredMessages from "../../components/StarredMessages";
 
 const GeneralApp = () => {
   const theme=useTheme();
@@ -17,9 +19,9 @@ const GeneralApp = () => {
     
       <Box sx={{ 
         height: "100%", 
-        // width: "calc(100vw-720px)",
-        width:"100%",
-        // width: sidebar.open ? "calc(100vw-740px)" : "calc(100vw - 420px)",
+     
+        // width:"100%",
+        width: sidebar.open ? "calc(100vw - 740px)" : "calc(100vw - 420px)",
         backgroundColor:theme.palette.mode==="light"? "#F0F4FA" : theme.palette.background.default,   
         }}
         >
@@ -27,10 +29,23 @@ const GeneralApp = () => {
           <Conversation/>  
         </Box>
         {/* <Contact/> */}
-        {sidebar.open && <Contact/> }
+        {sidebar.open &&
+        (() =>{
+          switch (sidebar.type){
+            case "CONTACT":
+              return <Contact/>;
+            case "STARRED":
+              return <StarredMessages/> 
+            case "SHARED":
+              return <SharedMessages/>;
+              default:
+                break;
+          }
+          })()}
         
     </Stack>
   );
 };
 
 export default GeneralApp;
+ 
