@@ -10,7 +10,7 @@ import RHFAutocomplete from '../../components/hook-form/RHFAutocomplete';
 const MEMBERS = ["Name 1", "Name 2", "Name 3"];
 
 const Transition = React.forwardRef(function Transition(props, ref) {
-  return <Slide direction="up" ref={ref} {...props} />
+  return <Slide direction="up" ref={ref} {...props} />;
 });
 
 const CreateGroupForm = ({ handleClose }) => {
@@ -46,7 +46,7 @@ const CreateGroupForm = ({ handleClose }) => {
   return (
     <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
       <Stack spacing={3}>
-        <RHFTextField name="title" labels="Title" />
+        <RHFTextField name="title" label="Title" />
         <RHFAutocomplete name="members" label="Members " multiple freeSolo options={MEMBERS.map((option) => option)} ChipProps={{ size: "medium" }} />
         <Stack spacing={2} direction="row" alignItems={"center"} justifyContent="end" >
           <Button onClick={handleClose}>
@@ -65,7 +65,7 @@ const CreateGroupForm = ({ handleClose }) => {
 
 
 
-const CreateGroup = (open, handleClose) => {
+const CreateGroup = ({open, handleClose}) => {
   return (
     <Dialog fullWidth maxWidth="xs" open={open} TransitionComponent={Transition} keepMounted sx={{ p: 4 }} >
       {/* {Title} */}
