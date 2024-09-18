@@ -91,6 +91,7 @@ const SideBar = () => {
                 setSelected(3)
               }}
                 sx={{ width: "max-content", color: "#000" }}
+                
               >
                 <Gear />
               </IconButton>
