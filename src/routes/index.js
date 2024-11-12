@@ -41,6 +41,7 @@ export default function Router() {
         {path:"Settings" , element:<Settings/>},
         { path: "group", element: <GroupPage /> },
         { path: "call", element: <CallPage /> },
+        { path: "profile", element: <ProfilePage/> },
 
         // if any visited in 404 then display the component page404 and this page is actually that you visited that page is no longer present in this application or not found 
         { path: "404", element: <Page404 /> },
@@ -74,3 +75,4 @@ const Settings = Loadable(
 const CallPage = Loadable(lazy(() => import("../pages/dashboard/Call")));
 const GroupPage = Loadable(lazy(() => import("../pages/dashboard/Group")));
 const Page404 = Loadable(lazy(() => import("../pages/Page404")));
+const ProfilePage=Loadable(lazy(() => import("../pages/dashboard/Profile")));
